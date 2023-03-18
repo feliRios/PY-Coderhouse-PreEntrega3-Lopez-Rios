@@ -2,7 +2,7 @@ from django import forms
 
 
 class SearchProduct(forms.Form):
-    nombre = forms.CharField(max_length=30)
+    nombre = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'placeholder': 'Nombre del producto'}))
     
     
 class RegisterClient(forms.Form):
