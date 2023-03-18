@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from core.models import Articulo, Cliente, Pedido
-from core.forms import SearchProduct, RegisterClient, RegisterOrder
+from core.forms import SearchProduct, RegisterClient, RegisterOrder, ContactForm
 
 
 def inicio(request):
@@ -63,7 +63,17 @@ def buscar_producto(request):
 
 
 def contacto(request):
-    return render(request, 'core/contacto.html')
+    if request.method == "POST":
+        data = request.POST
+        formulario = ContactForm(data)
+        
+        if formulario.is_valid():
+            cliente = formulario.cleaned_data['nombre']
+            return render(request, 'core/mensaje_enviado.html', {"cliente":cliente})
+        
+    else:
+        formulario = ContactForm()
+    return render(request, 'core/contacto.html', {"form":formulario})
 
 
 def registrar_cliente(request):

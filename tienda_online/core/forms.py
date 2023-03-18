@@ -16,3 +16,11 @@ class RegisterOrder(forms.Form):
     numero = forms.IntegerField()
     fecha = forms.DateField()
     entregado = forms.BooleanField(required=False)
+
+
+class ContactForm(forms.Form):
+    nombre = forms.CharField()
+    email = forms.EmailField()
+    asunto = forms.CharField()
+    mensaje = forms.CharField(widget=forms.Textarea)
+    
