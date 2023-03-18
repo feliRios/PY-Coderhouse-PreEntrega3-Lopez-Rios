@@ -10,3 +10,9 @@ class RegisterClient(forms.Form):
     direccion = forms.CharField(max_length=50)
     email = forms.EmailField()
     telefono = forms.IntegerField()
+    
+
+class RegisterOrder(forms.Form):
+    numero = forms.IntegerField()
+    fecha = forms.DateField()
+    entregado = forms.BooleanField(required=False)
