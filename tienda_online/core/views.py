@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from core.models import Articulo, Cliente, Pedido
-from core.forms import SearchProduct
+from core.forms import SearchProduct, RegisterClient
 
 
 def inicio(request):
@@ -64,3 +64,20 @@ def buscar_producto(request):
 
 def contacto(request):
     return render(request, 'core/contacto.html')
+
+
+def registrar_cliente(request):
+    if request.method == "POST":
+        cliente = request.POST
+        formulario = RegisterClient(cliente)
+        
+        if formulario.is_valid():
+            informacion = formulario.cleaned_data
+            customer = Cliente(nombre=informacion['nombre'], direccion=informacion['direccion'], email=informacion['email'], telefono=informacion['telefono'])
+            customer.save()
+            return render(request, 'core/cliente_registrado.html')
+        
+    else:
+        formulario = RegisterClient()
+
+    return render(request, 'core/registrar_cliente.html', {"form":formulario})
