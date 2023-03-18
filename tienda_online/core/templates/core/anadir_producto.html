@@ -7,10 +7,19 @@
 {% block content %}
 
     <p>Esta es la seccion para añadir un producto a la BBDD</p>
-    <form action="" method="POST">
+    <form action="{% url 'gracias_anadir' %}" method="POST"> {% csrf_token %}
         <fieldset>
             <legend>Producto</legend>
-            <input type="text">
+            <label for="nomprod">Nombre: </label>
+            <input type="text" id="nomprod" name="product" required>
+            <br>
+            <label for="seccprod">Seccion: </label>
+            <input type="text" id="seccprod" name="section" required>
+            <br>
+            <label for="valprod">Precio: </label>
+            <input type="number" id="valprod" name="price" required>
+            <br>
+            <input type="submit" value="Subir">
         </fieldset>
     </form>
     <br>
