@@ -26,9 +26,9 @@ def anadir_producto(request):
 
 def gracias_anadir(request):
     if request.POST:
-        if len(request.POST['product']) <= 30 and not request.POST['product'].isdigit():
-            if len(request.POST['section']) <= 20 and not request.POST['section'].isdigit():
-                if request.POST['price'].isdigit():
+        if request.POST['product'] and len(request.POST['product']) <= 30 and not request.POST['product'].isdigit():
+            if request.POST['section'] and len(request.POST['section']) <= 20 and not request.POST['section'].isdigit():
+                if request.POST['price'].isdigit() and request.POST['price'].isdigit():
                     producto = Articulo(nombre=request.POST['product'], seccion=request.POST['section'], precio=request.POST['price'])
                     producto.save()
                     return render(request, 'core/gracias_anadir.html')
