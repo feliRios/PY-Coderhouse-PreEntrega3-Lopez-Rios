@@ -19,5 +19,5 @@ from core.views import inicio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', inicio)
+    path('', inicio, name='index'),
 ]
