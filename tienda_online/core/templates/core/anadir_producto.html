@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} Productos {% endblock title %}
+
+{% block content %}
+
+    <p>Esta es la seccion para añadir un producto a la BBDD</p>
+    <form action="{% url 'gracias_anadir' %}" method="POST"> {% csrf_token %}
+        <fieldset>
+            <legend>Producto</legend>
+            <label for="nomprod">Nombre: </label>
+            <input type="text" id="nomprod" name="product" required>
+            <br>
+            <label for="seccprod">Seccion: </label>
+            <input type="text" id="seccprod" name="section" required>
+            <br>
+            <label for="valprod">Precio: </label>
+            <input type="number" id="valprod" name="price" required>
+            <br>
+            <input type="submit" value="Subir">
+        </fieldset>
+    </form>
+    <br>
+    <div class="d-flex">
+        <a href="{% url 'productos' %}" class="text-uppercase custom_orange-btn mr-3">
+          Volver Atras
+        </a>
+    </div>
+    <br>
+
+{% endblock content %}

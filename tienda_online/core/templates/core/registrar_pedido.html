@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} Pedidos {% endblock title %}
+
+{% block content %}
+
+    <p>Esta es la seccion para registrar un pedido:</p>
+
+    {% if form.errors %}
+    
+    <p>Los datos que ingresaste no son validos</p>
+
+    {% endif %}
+
+    <form action="" method="POST"> {% csrf_token %}
+    
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <input type="submit" value="Registrar">
+    </form>
+    <br>
+    <div class="d-flex">
+        <a href="{% url 'pedidos' %}" class="text-uppercase custom_orange-btn mr-3">
+          Volver Atras
+        </a>
+    </div>
+    <br>
+
+{% endblock content %}

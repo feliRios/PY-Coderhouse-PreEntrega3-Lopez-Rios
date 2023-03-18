@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} Productos {% endblock title %}
+
+{% block content %}
+
+    <p>Has buscado el producto <strong>'{{query}}'</strong></p>
+    <p></p>
+
+    {% if articulos %}
+        <p>Se han encontrado un total de <strong>{{articulos|length}}</strong> producto(s) que coinciden con <strong>'{{query}}'</strong>:</p>
+        <ul>
+            {% for product in articulos %}
+                <li>{{product.nombre}} - {{product.seccion}}</li>
+            {% endfor %}
+        </ul>
+    
+    {% else %}
+
+        <p>Al parecer no se ha encontrado ningun producto que coincida con <strong>'{{query}}'</strong> en la BBDD</p>
+
+
+    {% endif %}
+
+{% endblock content %}

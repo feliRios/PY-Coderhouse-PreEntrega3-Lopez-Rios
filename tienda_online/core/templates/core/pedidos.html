@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} Pedidos {% endblock title %}
+
+{% block content %}
+
+    <p>Esta es la seccion de pedidos. Por favor, seleccione uno:</p>
+    <div class="d-flex">
+        <a href="{% url 'registrar_pedido' %}" class="text-uppercase custom_orange-btn mr-3">
+          Registrar un Pedido
+        </a>
+    </div>
+    <br>
+
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} Inicio {% endblock title %}
+
+{% block content %}
+
+        <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="slider_item-box">
+              <div class="slider_item-container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="slider_item-detail">
+                        <div>
+                          <h1>
+                            Bienvenido a <br />
+                            mi tienda online
+                          </h1>
+                          <p>
+                            E-commerce de ejemplo desarrollado con el framework Django de Python, version 4.1.7.
+                          </p>
+                          <div class="d-flex">
+                            <a href="{% url 'productos' %}" class="text-uppercase custom_orange-btn mr-3">
+                              Articulos
+                            </a>
+                            <a href="{% url 'contacto' %}" class="text-uppercase custom_dark-btn">
+                              Contactanos
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="slider_img-box">
+                        <div>
+                          <img src="{% static 'core/images/slide-img.png' %}" alt="" class="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end slider section -->
+  </div>
+
+
+{% endblock content %}

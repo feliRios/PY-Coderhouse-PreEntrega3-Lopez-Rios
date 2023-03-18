@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} Productos {% endblock title %}
+
+{% block content %}
+
+    <p>Esta es la seccion de productos. Por favor, seleccione uno:</p>
+    <div class="d-flex">
+        <a href="{% url 'anadir_producto' %}" class="text-uppercase custom_orange-btn mr-3">
+          AÑADIR UN PRODUCTO
+        </a>
+        <a href="{% url 'buscar_producto' %}" class="text-uppercase custom_dark-btn">
+          BUSCAR UN PRODUCTO
+        </a>
+    </div>
+    <br>
+
+{% endblock content %}

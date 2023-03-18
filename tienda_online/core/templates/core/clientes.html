@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} Clientes {% endblock title %}
+
+{% block content %}
+
+    <p>Esta es la seccion de clientes. Por favor, seleccione uno:</p>
+    <div class="d-flex">
+        <a href="{% url 'registrar_cliente' %}" class="text-uppercase custom_orange-btn mr-3">
+          REGISTRAR UN CLIENTE
+        </a>
+    </div>
+    <br>
+
+{% endblock content %}
