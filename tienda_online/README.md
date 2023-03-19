@@ -11,3 +11,8 @@ La aplicación incluye varias vistas (10 en total), cada una con una funcionalid
 - La vista para registrar pedidos (registrar_pedido) permite registrar pedidos y su estado de entrega. 
 - La vista del formulario de contacto (contacto) permite una simulacion de un envio de email, con un asunto y texto, a la administracion del servidor.
 Las demas vistas cumplen la funcionalidad de renderizar las paginas principales y procesar/validar los datos.
+
+## Panel de Administracion:
+Superusuario para acceder al panel de administracion:
+- Username: admin
+- Password: admin
