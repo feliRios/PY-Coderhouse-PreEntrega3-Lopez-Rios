@@ -14,7 +14,7 @@ class RegisterClient(forms.Form):
 
 class RegisterOrder(forms.Form):
     numero = forms.IntegerField()
-    fecha = forms.DateField()
+    fecha = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'dd/mm/aa'}))
     entregado = forms.BooleanField(required=False)
 
 
